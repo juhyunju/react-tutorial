@@ -36,8 +36,18 @@ function Article(props){
     );
   }
   function Header(props){
+    function aHandler(ev){
+      ev.preventDefault();
+      props.onSelect();
+    }
     return(
-      <header><h1><a href="index.html">{props.title}</a></h1></header>
+      <header>
+        <h1>
+          <a href="index.html" onClick={aHandler}>
+            {props.title}
+          </a>
+         </h1>
+      </header>
 
     );
   }
@@ -47,9 +57,12 @@ function App() {
     {id:1, title:'html', body:'html is ..'},
     {id:2, title:'css', body:'css is ..'}
   ];
+  function onSelectHandler(){
+    alert('hi');
+  }
   return (
     <div>
-    <Header title="WEB"></Header>
+    <Header title="WEB" onSelect={onSelectHandler}></Header>
       <Nav data={topics}></Nav>
       <Article title="HTML" body="HTML is ..."></Article>
       <Article title="CSS" body="CSS is ..."></Article>
