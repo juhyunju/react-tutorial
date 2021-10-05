@@ -17,7 +17,14 @@ function Article(props){
     // ]
     var lis = [];
     for(var i =0; i < props.data.length; i++){
-      lis.push(<li key ={props.data[i].id}>{props.data[i].title}</li>)
+      var item = props.data[i];
+      lis.push(
+      <li key ={item.id}>
+        <a href={item.id+".html"}>
+          {item.title}
+          </a>
+          </li>
+      );
 
     }
     return (
