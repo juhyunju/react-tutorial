@@ -21,9 +21,9 @@ function Article(props){
     </nav>
     );
   }
-  function Header(){
+  function Header(props){
     return(
-      <header><h1><a href="index.html">WEB</a></h1></header>
+      <header><h1><a href="index.html">{props.title}</a></h1></header>
 
     );
   }
@@ -31,7 +31,7 @@ function Article(props){
 function App() {
   return (
     <div>
-    <Header></Header>
+    <Header title="WEB"></Header>
       <Nav></Nav>
       <Article title="HTML" body="HTML is ..."></Article>
       <Article title="CSS" body="CSS is ..."></Article>
