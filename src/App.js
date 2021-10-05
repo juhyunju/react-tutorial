@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-function Article(){
+function Article(props){
+    
     return(
       <article>
-      <h2>Welcome</h2>  
-      Hello, WEB
+      <h2>{props.title}</h2>  
+      {props.body}
     </article>  
     );
   }
@@ -20,17 +21,20 @@ function Article(){
     </nav>
     );
   }
-      
+  function Header(){
+    return(
+      <header><h1><a href="index.html">WEB</a></h1></header>
 
-    
-
+    );
+  }
 
 function App() {
   return (
     <div>
-    <header><h1><a href="index.html">WEB</a></h1></header>
+    <Header></Header>
       <Nav></Nav>
-      <Article></Article>
+      <Article title="HTML" body="HTML is ..."></Article>
+      <Article title="CSS" body="CSS is ..."></Article>
   </div>
   );
 }
